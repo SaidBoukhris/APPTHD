@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<!-- Four -->
+<section class="wrapper style1 fade-up">
+    <div class="container">
+        <header class="major">
+            <h2>Contrôles</h2>
+            <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+            <footer class="major">
+                <ul class="actions special">
+                    <li><a href="{{ path('controles_new') }}">Ajouter un controle</a></li>
+                </ul>
+            </footer>
+        </header>
+        <div class="box alt">
+            <div class="row gtr-uniform ">
+                {% for controle in controles %}
+                    <section class="col-4 col-6-medium col-12-xsmall">
+			            <span class="image left">
+                            <img src={{ controle.image }} alt="" />
+                        </span>
+                        <h2>{{ controle.name }}</h2>
+                        <p>{{ controle.description }}</p>
+                        <p class="major">
+                            {% if controle.modifiedAt %}
+                                <span class="icon solid alt fa-edit"> Modifié le {{ controle.modifiedAt ? controle.modifiedAt|date('d/m/Y à H:i:s') : '' }}</span>
+                            {% else %}
+                                <span class="icon solid alt fa-calendar-week"> Paru le {{ controle.createdAt ? controle.createdAt|date('d/m/Y') : '' }}</span>
+                            {% endif %}
+                        </p>
+                        <ul class="actions">
+                            <li>
+                                <a href="{{ path('controles_show', {'id': controle.id}) }}">Voir</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('controles_edit', {'id': controle.id}) }}">Modifier</a>
+                            </li>
+                        </ul>
+                    </section>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

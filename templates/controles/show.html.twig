@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Controles{% endblock %}
+
+{% block body %}
+    <!-- Four -->
+<section class="wrapper style1 special fade-up">
+    <div class="container">
+        <section>
+            <h2>{{ controle.name }}</h2>
+            <p>{{ controle.description }}</p>
+            <p>
+                <a class="button" href="{{ path('controles_edit', {'id': controle.id}) }}">Modifier</a>
+            </p>
+            <span class="image">
+                <img src={{ controle.image }} alt="" />
+            </span>
+            <p>
+                <span class="icon solid alt fa-calendar-week"> {{ controle.createdAt ? controle.createdAt|date('d/m/Y à H:i') : '' }}</span>
+            </p>
+            <p>
+                <span class="icon solid alt fa-edit"> {{ controle.modifiedAt ? controle.modifiedAt|date('d/m/Y à H:i') : '' }}</span>
+            </p>     
+        </section>
+    </div>
+</section>
+{% endblock %}

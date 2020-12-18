@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<!-- Main -->
+<div id="main" class="wrapper style1">
+	<div class="container">
+        <!-- Form -->
+        <section>
+            <h3>{% if editMode %} Modification du controle n°{{ controle.id }}{% else %} Création d'un controle {% endif %}</h3>
+            <form method="post" action="#">
+                {{ form_start(form) }}
+                <div class="row gtr-uniform gtr-50">
+                     <div class="col-12">
+                        {{ form_widget(form) }}
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions">
+                            <button class="button">{{ button_label|default('Enregistrer') }}</button>
+                        </ul>
+                    </div>
+                <a href="{{ path('controles_index') }}">Retour</a>
+                </div>
+                {{ form_end(form) }}
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}
