@@ -3,47 +3,84 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}AriegeTresHautDebit{% endblock %}</title>
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
-    <noscript><link rel="stylesheet" href="{{asset('assets/css/noscript.css')}}" /></noscript>
+    <noscript>
+        <link rel="stylesheet" href="{{asset('assets/css/noscript.css')}}" />
+    </noscript>
     {% block stylesheets %}{% endblock %}
     <title>THD Ariége</title>
 </head>
-<body class="is-preload landing">
+<body class="is-preload">
     <div id="page-wrapper">
-
         <!-- Header -->
-            <header id="header">
-                <h1 id="logo"><a href="{{path('landing')}}">09THD</a></h1>
-                <nav id="nav">
-                    <ul>
-                        <li><a href="{{path('app')}}">Accueil</a></li>
-                        <li>
-                            <a href="#">Layouts</a>
-                            <ul>
-                                <li><a href="{{path('left_sidebar')}}">Maintenance</a></li>
-                                <li><a href="{{path('right_sidebar')}}">Right Sidebar</a></li>
-                                <li><a href="{{path('no_sidebar')}}">No Sidebar</a></li>
-                                <li>
-                                    <a href="#">Submenu</a>
-                                    <ul>
-                                        <li><a href="#">Option 1</a></li>
-                                        <li><a href="#">Option 2</a></li>
-                                        <li><a href="#">Option 3</a></li>
-                                        <li><a href="#">Option 4</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="{{path('element')}}">Elements</a></li>
-                        <li><a href="{{path('app_login')}}" class="button primary">Sign Up</a></li>
-                    </ul>
-                </nav>
-            </header>
+        <header id="header">
+            <h1 id="logo"><a href="{{path('landing')}}">ARTHD</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a class="button small" href="#">Les Offres</a>
+                        <ul>
+                            <li>
+                                <a href="#">Particuliers</a>
+                                <ul>
+                                    <li><a href="{{path('particulier_thd')}}">Le trés haut débit</a></li>
+                                    <li><a href="{{path('particulier_techno')}}">Les technologies THD</a></li>
+                                    <li><a href="{{path('particulier_offres')}}">Les offres</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Entreprises</a>
+                                <ul>
+                                    <li><a href="{{path('right_sidebar')}}">Les performances THD</a></li>
+                                    <li><a href="{{path('no_sidebar')}}">THD Entreprises</a></li>
+                                    <li><a href="{{path('no_sidebar')}}">Les offres</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Collectivités</a>
+                                <ul>
+                                    <li><a href="{{path('controles_index')}}">Le THD pour les territoires</a></li>
+                                    <li><a href="{{path('no_sidebar')}}">Les offres</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="button small" href="#">Opérateurs</a>
+                        <ul>
+                            <li><a href="{{path('element')}}">Offres de références</a></li>
+                            <li><a href="{{path('right_sidebar')}}">Publications de lots</a></li>
+                            <li><a href="{{path('no_sidebar')}}">Offres ARTHD</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="button small" href="#">Éligibilité</a>
+                        <ul>
+                            <li><a href="{{path('eligibilite')}}">Testez votre accés à la fibre</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="button small" href="{{path('controles_index')}}">Nous contacter</a></li>
+                    <li>
+                        {% if app.user %}
+                        <a class="button primary small" href="{{ path('app_logout') }}">Déconnexion</a>
 
-    {% block body %}{% endblock %}
-    
-        <!-- Footer -->
+                    {% if app.user %}
+                        <li><h4>{{ app.user.username }}</h4></li>
+                    {% endif %}
+                        {% else %}
+                        <a class="button primary small" href="{{path('app_login')}}">Connexion</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+            <!-- Footer -->
             <footer id="footer">
                 <ul class="icons">
                     <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
@@ -54,12 +91,11 @@
                     <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
                 </ul>
                 <ul class="copyright">
-                    <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    <li>&copy; 09THD. All rights reserved.</li><li>Design: <a href="#">Said Boukhris</a></li>
                 </ul>
             </footer>
-
+        </div>
     </div>
-
     {% block javascripts %}{% endblock %}
     <!-- Scripts -->
         <script src="{{asset('assets/js/jquery.min.js')}}"></script>

@@ -17,6 +17,7 @@ class AppController extends AbstractController
             'pageName' => 'AppController',
         ]);
     }
+
     /**
      * @Route("/landing", name="landing")
      */
@@ -26,6 +27,7 @@ class AppController extends AbstractController
             'pageName' => 'AppController',
         ]);
     }
+
     /**
      * @Route("/element", name="element")
      */
@@ -56,13 +58,22 @@ class AppController extends AbstractController
         ]);
     }
 
-
     /**
      * @Route("/no_sidebar", name="no_sidebar")
      */
     public function noSidebar(): Response
     {
         return $this->render('app/no-sidebar.html.twig', [
+            'pageName' => 'AppController',
+        ]);
+    }
+
+    /**
+     * @Route("/eligibilite", name="eligibilite")
+     */
+    public function eligibilite(): Response
+    {
+        return $this->render('app/eligibilite.html.twig', [
             'pageName' => 'AppController',
         ]);
     }
