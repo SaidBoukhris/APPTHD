@@ -1,91 +1,105 @@
 {% extends 'base.html.twig' %} 
 {% block title %}Hello AppController!{% endblock %} 
 {% block body %}
-<div id="page-wrapper style1">
-    <!-- Main -->
-            <!-- Header -->
-            <header class="major">
-                <h2>TESTER SON ACCÈS A LA FIBRE</h2>
-            </header>
-            <!-- Content -->
-            <section id="content">
-					<iframe src="https://www.eligibilite-thd.fr/cartographie/ARTD" width="100%" height="610px" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes" allowfullscreen="allowfullscreen"></iframe>
-            </section>
-			<!-- Tables-->
-			<section>
+	<!-- Header -->
+	<header class="major">
+		<h2>TESTER SON ACCÈS A LA FIBRE</h2>
+	</header>
+	
+	<div class="row gtr-uniform">
+		<div class="col-8 col-12-medium">
+			<!-- Map -->
+			<section id="content">
+				<iframe src="https://www.eligibilite-thd.fr/cartographie/ARTD" width="100%" height="850px" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes" allowfullscreen="allowfullscreen"></iframe>
+			</section>
+		</div>
+		<div class="col-4 col-12-medium">
+			<!-- Table -->
+			<section id="sidebar">
 				<div class="table-wrapper">
-                <p>LÉGENDE DE LA CARTE</p>
+					<p>LÉGENDE DE LA CARTE</p>
 					<table class="alt">
 						<tbody>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; border-radius: 50%; background: #e4595b; margin: 5px;"></div>
+								</td>
+								<td>
+									<p style="margin: 10px; text-align:center; text-decoration:underline;">Fibre grand public</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div style="width: 10px; height: 10px; border-radius: 50%; background: #e4595b; margin: 5px;"></div>
 								</td>
 								<td>Vous avez accès à la fibre</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; border-radius: 50%; background: #5868c1; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; border-radius: 50%; background: #5868c1; margin: 5px;"></div>
 								</td>
 								<td>Fibre en cours de déploiement</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; border-radius: 50%; background: #f2e481; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; border-radius: 50%; background: #f2e481; margin: 5px;"></div>
 								</td>
 								<td>Vous devez demander le raccordement de votre habitation à la fibre</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; border-radius: 50%; background: #f26ec7; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; border-radius: 50%; background: #f26ec7; margin: 5px;"></div>
 								</td>
 								<td>Pas de	pastille sur l&rsquo;habitation ou pas d&rsquo;habitation sur la carte  : fibre non déployée à ce jour</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; border-radius: 50%; background: #ffffff; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; border-radius: 50%; background: #ffffff; margin: 5px;"></div>
 								</td>
 								<td>
 									<span>Informez-vous auprès du <strong><a href="#" target="_blank" rel="noopener noreferrer"><u>syndicat numérique du département</u></a></strong></span>
 								</td>
 							</tr>
-						</tbody>
-					</table>
-					<p>Déploiement prévisionnel de la fibre sur les territoires</p>
-					<table class="alt">
-						<tbody>
 							<tr>
-								<td><div style="width: 12px; height: 12px; background: #9cc0aa; margin: 5px;">
-										</div></td>
+								<td>
+								</td>
+								<td>
+									<p style="margin: 10px; text-align:center; text-decoration:underline;">Déploiement prévisionnel de la fibre sur les territoires</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div style="width: 10px; height: 10px; background: #9cc0aa; margin: 5px;"></div>
+								</td>
 								<td>Phase 1 -> 2018-2020</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; background: #5ed35e; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; background: #5ed35e; margin: 5px;"></div>
 								</td>
 								<td>Phase 2 -> 2019-2021</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; background: #407c9c; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; background: #407c9c; margin: 5px;"></div>
 								</td>
 								<td>Phase 3 -> 2021-2023</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; background: #6e9a96; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; background: #6e9a96; margin: 5px;"></div>
 								</td>
 								<td>Phase 4 -> 2024-2025</td>
 							</tr>
 							<tr>
 								<td>
-									<div style="width: 12px; height: 12px; background: #bbbdc7; margin: 5px;"></div>
+									<div style="width: 10px; height: 10px; background: #bbbdc7; margin: 5px;"></div>
 								</td>
 								<td><span>Zone AMII</span></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-            </section>
-</div>
+			</section>
+		</div>
+	</div>
 {% endblock %}
